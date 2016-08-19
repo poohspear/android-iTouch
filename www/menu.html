@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>KBZ Main Menu</title>
+  <!-- Material Design fonts -->
+  <!-- Bootstrap -->
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Material Design -->
+  <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
+  <link href="dist/css/ripples.min.css" rel="stylesheet">
+  <link href="dist/css/snackbar.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: url('img/body_bg.jpg');
+    }
+    #main_menu a {
+      width: 100%;
+      clear: both;
+      display: block;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="main_menu">
+  <div class="col-xs-6 col-xs-offset-3">
+    <h1>&nbsp;</h1>
+    <img src="./kbz-logo-big.png" class="img-responsive">
+  </div>
+  <div class="col-xs-6 col-xs-offset-3">
+    <a href="menu_detail_2.html" class="btn btn-raised btn-info">Personal</a>
+    <a href="menu_detail_2.html" class="btn btn-raised btn-info">Corporate</a>
+    <a href="menu_detail_2.html" class="btn btn-raised btn-info">SME</a>
+  </div>
+</div>
+<script src="dist/js/jquery.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/ripples.min.js"></script>
+<script src="dist/js/material.min.js"></script>
+<script src="dist/js/snackbar.min.js"></script>
+<script src="dist/js/jquery.nouislider.min.js"></script>
+<script>
+  $(function () {
+    $.material.init();
+    // Your application has indicated there's an error
+    (function(seconds) {
+        var refresh,       
+            intvrefresh = function() {
+                clearInterval(refresh);
+                refresh = setTimeout(function() {
+                    window.location.href = "./index.html";
+                }, seconds * 1000);
+            };
+        $(document).on('keypress click scroll', function() { intvrefresh() });
+        intvrefresh();
+    }(10));
+  });
+</script>
+</body>
+</html>

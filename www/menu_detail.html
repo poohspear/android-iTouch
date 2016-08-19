@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>KBZ Main Menu</title>
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Material Design -->
+  <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
+  <link href="dist/css/ripples.min.css" rel="stylesheet">
+  <link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: url('img/body_bg.jpg');
+    }
+    #main_menu a {
+      width: 100%;
+      clear: both;
+      display: block;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="main_menu">
+    <div class="row">
+      <div class="col-xs-4">
+          <h1>&nbsp;</h1>
+          <img src="./kbz-logo-big.png" class="img-responsive">
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-xs-4">
+          <a href="menu.html" class="btn btn-raised btn-info">Back to menu</a>
+      </div>
+     </div>
+  </div>
+
+
+  <div class="container" id="main_menu">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bs-component">
+          <div class="jumbotron">
+            <h1>Escrow Account</h1>
+
+            <p>An escrow is a financial instrument or a contractual arrangement held by a third party on behalf of the other two parties in a transaction.</p>
+
+            <ul>
+              <li><p>The funds are held by the escrow service until it receives the appropriate written or oral instructions or until obligations have been fulfilled. Securities, funds and other assets can be held in escrow.</p></li>
+
+              <li><p>An escrow account is a temporary pass through account held by a third party, often a bank, during the process of a transaction between two parties.</p></li>
+
+              <li><p>A bank or any other institution acting as the escrow agent has the right to claim commission or service charges (from both parties).</p></li>
+
+              <li><p>The bank makes a contractual arrangement to hold funds and documents on behalf of two agreeing parties, and to deliver them when specified conditions are met during a transaction.month from this account.</p></li>
+
+              <li><p>An escrow account can be used in the sale of real estate property, for example. When there are conditions to the sale, the buyer and seller may agree to use escrow. In this case, the buyer of the property will deposit the payment amount for the property in an escrow account held by a third party. In the inspection process of the house, it assures the seller that the buyer is capable of making payment. Once all of the conditions to the sale are fulfilled, the escrow transfers the payment to the seller, and title or ownership is transferred to the buyer.</p></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="row">
+        <div class="col-xs-12">
+          Copyright &copy; 2016 KBZ Group
+          <br />
+          <br />
+        </div>
+    </div>
+  </div>
+<script src="dist/js/jquery.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/ripples.min.js"></script>
+<script src="dist/js/material.min.js"></script>
+<script src="dist/js/snackbar.min.js"></script>
+<script src="dist/js/jquery.nouislider.min.js"></script>
+<script>
+  $(function () {
+    $.material.init();
+    // Your application has indicated there's an error
+    (function(seconds) {
+        var refresh,       
+            intvrefresh = function() {
+                clearInterval(refresh);
+                refresh = setTimeout(function() {
+                    window.location.href = "./index.html";
+                }, seconds * 1000);
+            };
+        $(document).on('keypress click scroll', function() { intvrefresh() });
+        intvrefresh();
+    }(10));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cover demo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style>
+      /**
+       * Demo styles
+       */
+      html,
+      body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: black;
+      }
+      #start {
+        position: absolute;
+        left: 0;
+        bottom: 10%;
+        width: 100%;
+        color: white;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      video {
+        /* HTML5 video fallback */
+        display: block;
+        background-image: url('demo.jpg');
+        background-position: center;
+        -webkit-background-size: cover;
+        background-size: cover;
+
+        /* Disable play button in iOS */
+        pointer-events: none;
+      }
+
+      /**
+       * Cover dependent styles
+       */
+
+      /* The element to cover, `body` in this case */
+      body {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* The element to resize, `video` in this case */
+      video {
+        min-width: 100%;
+        min-height: 100%;
+
+        /* Center it */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <video poster="demo.jpg" preload autoplay loop muted>
+      <source src="music-run-by-kbz.mp4" type="video/mp4">
+    </video>
+    <div class="container" id="start">
+      <div class="col-xs-6 col-xs-offset-3">
+          <a href="menu.html" class="btn btn-lg btn-primary">Start KBZ iTouch</a>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        $('video').cover({
+          ratio: 1080 / 1920
+        });
+
+        $(window).resize(function() {
+          $('video').cover('set');
+        });
+      });
+    </script>
+  </body>
+</html>

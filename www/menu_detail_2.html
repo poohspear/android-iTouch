@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>KBZ Main Menu</title>
+  <!-- Bootstrap -->
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Material Design -->
+  <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
+  <link href="dist/css/ripples.min.css" rel="stylesheet">
+  <link href="dist/snackbar.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: url('img/body_bg.jpg');
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="main_menu">
+    <div class="row">
+      <div class="col-xs-4">
+          <h1>&nbsp;</h1>
+          <img src="./kbz-logo-big.png" class="img-responsive">
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-xs-4">
+          <a href="menu.html" class="btn btn-raised btn-info">Back to menu</a>
+      </div>
+     </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bs-component">
+          <div class="jumbotron">
+            <h1>Which account is right for you?</h1>
+            <div class="btn-group btn-group-justified btn-group-raised">
+                <a href="menu_detail.html" class="btn btn-raised btn-info">Escrow Account</a>
+                <a href="menu_detail.html" class="btn btn-raised btn-info">Savings Deposit Account</a>
+                <a href="menu_detail.html" class="btn btn-raised btn-info">Fixed Deposit Account</a>
+            </div>
+            <div class="btn-group btn-group-justified btn-group-raised">
+                <a href="menu_detail.html" class="btn btn-raised btn-info">Current Account</a>
+                <a href="menu_detail.html" class="btn btn-raised btn-info">Foreign Currency Account</a>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="alert alert-dismissible alert-info">
+                      <h2>Savings deposit account</h2>
+                      <p>Eligible individuals and organizations can watch their money grow with the KBZ Savings Deposit Account.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="img/kbz-icon1.png" class="img-responsive">
+                    <h2>High interest rate</h2>
+                    <p>Watch your savings grow with us with and annual interest rate of 8.25%
+                    kbz-icon2</p>
+                </div>
+                <div class="col-sm-3">
+                    <img src="img/kbz-icon2.png" class="img-responsive">
+                    <h2>Take out a loan</h2>
+                    <p>Using your savings account as insurance we can help you take out a KBZ loan
+                    kbz-icon3</p>
+                </div>
+                <div class="col-sm-3">
+                    <img src="img/kbz-icon3.png" class="img-responsive">
+                    <h2>International transfers</h2>
+                    <p>Send and receive money to and from loved ones overseas
+                    kbz-icon4</p>
+                </div>
+                <div class="col-sm-3">
+                    <img src="img/kbz-icon4.png" class="img-responsive">
+                    <h2>Online banking</h2>
+                    <p>Get access to all of KBZs latest online banking services</p>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+          Copyright &copy; 2016 KBZ Group
+          <br />
+          <br />
+        </div>
+    </div>
+  </div>
+<script src="dist/js/jquery.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/ripples.min.js"></script>
+<script src="dist/js/material.min.js"></script>
+<script src="dist/js/snackbar.min.js"></script>
+<script src="dist/js/jquery.nouislider.min.js"></script>
+<script>
+  $(function () {
+    $.material.init();
+    // Your application has indicated there's an error
+    (function(seconds) {
+        var refresh,       
+            intvrefresh = function() {
+                clearInterval(refresh);
+                refresh = setTimeout(function() {
+                    window.location.href = "./index.html";
+                }, seconds * 1000);
+            };
+        $(document).on('keypress click scroll', function() { intvrefresh() });
+        intvrefresh();
+    }(10));
+  });
+</script>
+</body>
+</html>
